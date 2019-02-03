@@ -2,6 +2,8 @@ var saveUser = undefined //hierheen verwijzen wanneer er user gegevens opgeslage
 
 
 //user new
+
+
 function saveNewUser() {
 
     let user = {}
@@ -16,7 +18,7 @@ function saveNewUser() {
     document.location.href = "Settings.html";
 
 }
-// wijziging
+
 
 //functie voor opslaan naar locale storage
 function SaveToLocalStorage() {
@@ -38,6 +40,20 @@ function getUserInfo() {
 		document.getElementById("userName").value 		= user1.userName
 		document.getElementById("userEmail").value 		= user1.userEmail
 		document.getElementById("userCountry").value 	= user1.userCountry
-		document.getElementById("userCity").value 		= user1.userCity
+        document.getElementById("userCity").value 		= user1.userCity
+        
 	};
 
+
+    function changeUser() {
+  
+      
+       $('.readonly').prop('readonly', false);
+       document.getElementById("userName").focus(); 
+       document.getElementById("btn_saveUser").style.display = 'block';
+       document.getElementById("btn_changeUser").style.display="none";
+    }
+
+    function saveUser() {
+
+    }
