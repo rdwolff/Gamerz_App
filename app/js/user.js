@@ -16,7 +16,7 @@ function saveNewUser() {
     document.location.href = "Settings.html";
 
 }
-
+// wijziging
 
 //functie voor opslaan naar locale storage
 function SaveToLocalStorage() {
