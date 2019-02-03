@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Gamerz</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+
+
+	<link rel="stylesheet" href="css/themes/gamerz1.css">
+	<link rel="stylesheet" href="css/themes/gamerz1.min.css">
+	<link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css">
+	<link rel="stylesheet" href="jqm/jquery.mobile.structure-1.4.5.min.css">
+
+	<script type="text/javascript" src="cordova.js"></script>
+
+	<script src="jqm/jquery-1.11.1.min.js"></script>
+	<!-- originele link: http://code.jquery.com/jquery-1.11.1.min.js-->
+	<script src="jqm/jquery.mobile-1.4.5.min.js"></script>
+	<!-- http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js -->
+
+	
+
+
+
+
+
+
+
+
+</head>
+
+<body>
+	<div data-role="header" data-position="fixed" data-theme="c" data-tap-toggle="false">
+		<h1>settings</h1>
+
+		<div data-role="navbar">
+			<ul>
+				<li><a href="settings.html#settings" data-transition="slide" target="_self">settings</a></li>
+				<li><a href="user.html" data-transition="slide" target="_self">user</a></li>
+
+			</ul>
+		</div>
+	</div><!-- /header -->
+
+
+	<div data-role="page" id="user" data-title="Settings">
+
+		<div class="ui-content" role="main">
+
+
+			<h1>Profile</h1>
+
+
+
+
+			<label for="ScreenName">Screen name</label>
+			<input type="text" name="userName" id="userName" value="" placeholder="Username" readonly="readonly">
+
+			<label for="Email">Email</label>
+			<input type="Email" name="userEmail" id="userEmail" value="" placeholder="Email" readonly>
+
+			<label for="Country">Country</label>
+
+			<input type="text" name="userCountry" id="userCountry" value="" placeholder="Country" readonly>
+
+			<label for="city">City</label>
+			<input type="text" name="userCity" id="userCity" value="" placeholder="City" readonly>
+
+			<p><a href="userChange.html" class="ui-btn ui-shadow ui-corner-all" target="_self">Change Profile</a></p>
+			<p><a href="userNew.html" target="_self">new user</a></p>
+
+			hier komt de mogelijkheid om profiel aan te passen
+			link new user verwijderen
+
+
+		</div><!-- /content -->
+
+
+
+
+
+
+
+
+
+
+	</div><!-- /page -->
+
+
+
+
+
+
+	<div data-role="footer" data-position="fixed" data-theme="d" data-tap-toggle="false">
+		<div data-role="navbar">
+			<ul>
+				<li><a href="index.html" data-transition="fade" target="_self">PageA</a></li>
+				<li><a href="page-b.html" data-transition="flip" target="_self">PageB</a></li>
+				<li><a href="page-c.html" data-transition="turn" target="_self">PageC</a></li>
+				<li><a href="settings.html" data-transition="slide" target="_self">Settings</a></li>
+			</ul>
+		</div><!-- /navbar -->
+	</div><!-- /footer -->
+
+</body>
+
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/user.js"></script>
+</html>
