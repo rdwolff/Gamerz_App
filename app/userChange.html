@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Gamerz</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+
+
+	<link rel="stylesheet" href="css/themes/gamerz1.css">
+	<link rel="stylesheet" href="css/themes/gamerz1.min.css">
+	<link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css">
+	<link rel="stylesheet" href="jqm/jquery.mobile.structure-1.4.5.min.css">
+
+	<script type="text/javascript" src="cordova.js"></script>
+
+	<script src="jqm/jquery-1.11.1.min.js"></script>
+	<!-- originele link: http://code.jquery.com/jquery-1.11.1.min.js-->
+	<script src="jqm/jquery.mobile-1.4.5.min.js"></script>
+	<!-- http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js -->
+
+	<script type="text/javascript" src="js/index.js"></script>
+
+
+
+
+
+
+
+
+</head>
+
+<body onload="getUserInfo()">
+		
+		<div data-role="header" data-position="fixed" data-theme="c" data-tap-toggle="false">
+				<a href="settings.html" data-rel="back"  class="ui-btn ui-btn-left ui-alt-icon ui-nodisc-icon ui-corner-all ui-btn-icon-notext ui-icon-delete">Back</a>
+				<h1>Change Profile</h1>
+				
+			</div><!-- /header -->
+
+
+
+
+
+	<div data-role="page" data-title="Settings" data-theme="b">
+
+
+		<div class="ui-content" role="main">
+
+	<!-- action omschrijft de locatie van het formulier -->
+	<!-- get of post is de http methode hoe de gegevens verzonden worden -->		
+<form > 
+	
+
+			<label for="userName">Screen name</label>
+			<input type="text" name="userName"  id="userName" value="" placeholder = "Name">
+			
+			<label for="userEmail">Email</label>
+			<input type="email" name="userEmail"   id="userEmail" value="" placeholder = "Email">
+			
+			<label for="userCountry">Country</label>
+			<input type="text" name="userCountry" id="userCountry" value="" placeholder = "Country">
+			
+			<label for="userCity">City</label>
+			<input type="text" name="userCity" id="userCity" value="" placeholder = "City">
+			
+		</form>
+
+			<button role="button" id="btn_saveUser" onclick="saveNewUser()" >Save Profile</button>
+
+		
+
+	
+		! profiel image toevoegen<br/>
+		! achtergrond image toevoegen<br/>
+		</div><!-- /content -->
+
+
+	</div><!-- /page -->
+
+
+
+
+	<div data-role="footer" data-position="fixed" data-theme="d" data-tap-toggle="false">
+		<div data-role="navbar">
+			<ul>
+				<li><a href="index.html" data-transition="fade" target="_self">PageA</a></li>
+				<li><a href="page-b.html" data-transition="flip" target="_self">PageB</a></li>
+				<li><a href="page-c.html" data-transition="turn" target="_self">PageC</a></li>
+				<li><a href="settings.html" data-transition="slide" target="_self">Settings</a></li>
+			</ul>
+		</div><!-- /navbar -->
+	</div><!-- /footer -->
+
+</body>
+
+
+
+
+<script type="text/javascript" src="js/user.js"></script>
+
+</html>
