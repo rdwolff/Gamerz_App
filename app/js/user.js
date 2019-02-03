@@ -1,6 +1,7 @@
+var saveUser = undefined //hierheen verwijzen wanneer er user gegevens opgeslagen dienen te worden in local storage
+
+
 //user new
-//document.getElementById("btn_saveNewUser").addEventListener("click", saveNewUser);
-var saveNewUser = undefined
 function saveNewUser() {
 
     let user = {}
@@ -8,7 +9,7 @@ function saveNewUser() {
     user["userEmail"] = document.getElementById("userEmail").value;
     user["userCountry"] = document.getElementById("userCountry").value;
     user["userCity"] = document.getElementById("userCity").value;
-    newUser = user;
+    saveUser = user;
     SaveToLocalStorage();
 
     document.getElementById("frm_userNew").reset("frm_userNew");
@@ -19,14 +20,18 @@ function saveNewUser() {
 
 //functie voor opslaan naar locale storage
 function SaveToLocalStorage() {
-    localStorage.setItem("user", JSON.stringify(saveNewUser));
+    localStorage.setItem("user", JSON.stringify(saveUser));
     localStorage.setItem("userSaved", true);
 
-}
+};
+
+//functie voor terughalen van locale storage
 
 
 //page: user
-	{
+
+function getUserInfo() {
+    console.log("test");
 		let user = localStorage.getItem("user")
 		let user1 = JSON.parse(user);
 
@@ -34,5 +39,5 @@ function SaveToLocalStorage() {
 		document.getElementById("userEmail").value 		= user1.userEmail
 		document.getElementById("userCountry").value 	= user1.userCountry
 		document.getElementById("userCity").value 		= user1.userCity
-	}
+	};
 

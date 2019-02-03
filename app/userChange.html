@@ -30,7 +30,7 @@
 
 </head>
 
-<body>
+<body onload="getUserInfo()">
 		
 		<div data-role="header" data-position="fixed" data-theme="c" data-tap-toggle="false">
 				<a href="settings.html" data-rel="back"  class="ui-btn ui-btn-left ui-alt-icon ui-nodisc-icon ui-corner-all ui-btn-icon-notext ui-icon-delete">Back</a>
@@ -66,7 +66,7 @@
 			
 		</form>
 
-			<button role="button" id="btn_saveUser" >Save Profile</button>
+			<button role="button" id="btn_saveUser" onclick="saveNewUser()" >Save Profile</button>
 
 		
 
@@ -94,50 +94,9 @@
 
 </body>
 
-<script>
 
-{
-let user = localStorage.getItem("user")
-let user1 = JSON.parse(user);
-console.log(user);
-
-
-//document.getElementById("userName").value = user.username;
-//console.log(user.username);
-}
-
-document.getElementById('userName').value= localStorage.getItem("userName");
-
-document.getElementById('userEmail').value= localStorage.getItem("userEmail") ;
-document.getElementById('userCountry').value= localStorage.getItem("userCountry");
-document.getElementById('userCity').value= localStorage.getItem("userCity");
-
-
-
-
-
-//page changeProfile btn saveProfile
-document.getElementById("btn_saveUser").addEventListener("click", saveUser);
-function saveUser() {
-	var saveUserName = document.getElementById("userName").value
-	localStorage.setItem("userName", saveUserName);
-	var saveUserEmail = document.getElementById("userEmail").value
-	localStorage.setItem("userEmail", saveUserEmail);
-	var saveUserCountry = document.getElementById("userCountry").value
-	localStorage.setItem("userCountry", saveUserCountry);
-	var saveUserCity = document.getElementById("userCity").value
-	localStorage.setItem("userCity", saveUserCity);
-	alert("Profile is saved")
-	document.location.href = "Settings.html";
-
-	//var sendChanges = saveUserName +" , "+ saveUserEmail+" , "+ saveUserCountry+" , "+ saveUserCity
-	//var myJSON = JSON.stringify(sendChanges);
-	//alert(myJSON)
-	//window.location = "demo_json.php?x=" + myJSON;
-};
-
-</script>
 
 
 <script type="text/javascript" src="js/user.js"></script>
+
 </html>
