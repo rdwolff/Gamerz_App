@@ -30,7 +30,7 @@
 
 </head>
 
-<body onload="getUserInfo()">
+<body onload="grabUserInfo()">
 	<div data-role="header" data-position="fixed" data-theme="c" data-tap-toggle="false">
 		<h1>settings</h1>
 
@@ -65,13 +65,10 @@
 			<input type="text" name="userCity" class="readonly" id="userCity" value="" placeholder="City" readonly="readonly">
 		
 		</form>
-			<button id="btn_changeUser" onclick="changeUser()" class="ui-btn ui-shadow ui-corner-all" >Change Profile</button>
-			<button id="btn_saveUser" onclick="saveUser()" class="ui-btn ui-shadow ui-corner-all" style="display:none">Save Profile</button>
+			<button id="btn_changeUser" onclick="changeUser()" class="ui-btn ui-icon-edit ui-btn-icon-right ui-shadow ui-corner-all" >Change Profile</button>
+			<button id="btn_saveUser" onclick="saveUser()" class="ui-btn ui-icon-action ui-btn-icon-right ui-shadow ui-corner-all" style="display:none">Save Profile</button>
 	
-			<p><a href="userNew.html" target="_self">new user</a></p>
-
-			hier komt de mogelijkheid om profiel aan te passen
-			link new user verwijderen
+			
 			
 
 		</div><!-- /content -->
