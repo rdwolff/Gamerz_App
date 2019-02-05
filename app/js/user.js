@@ -2,8 +2,6 @@ var savedUser = undefined //hierheen verwijzen wanneer er user gegevens opgeslag
 
 
 //user new
-
-
 function saveUser() {
     console.log("fct_saveUser");
     let user = {}
@@ -12,30 +10,31 @@ function saveUser() {
     user["userCountry"] = document.getElementById("userCountry").value;
     user["userCity"] = document.getElementById("userCity").value;
     savedUser = user;
+
     
+    account();//versturen naar services.
     SaveToLocalStorage();
 }
 
+function clearForm() {
+    document.getElementById("frm_userNew").reset("frm_userNew");
+}
+
+// Page userNew / btn_saveNewUser
 function saveNewUser() {
     console.log("functie saveNewUser")
     saveUser();
-    document.getElementById("frm_userNew").reset("frm_userNew");
-    document.location.href = "index.html";
-
+    
+    
+    //document.location.href = "index.html";
+    
 };
 
-
-
-
-
-
-
-//functie voor opslaan naar locale storage
+//functie voor opslaan naar locale storage, nog niet geheel stand alone
 function SaveToLocalStorage() {
     console.log("fuctie SaveToLocalStorage")
     localStorage.setItem("user", JSON.stringify(savedUser));
     localStorage.setItem("userSaved", true);
-    
 };
 
 //functie voor terughalen van locale storage
@@ -52,14 +51,10 @@ function grabUserInfo() {
     document.getElementById("userEmail").value = user1.userEmail
     document.getElementById("userCountry").value = user1.userCountry
     document.getElementById("userCity").value = user1.userCity
-
-    console.log(user1.userName)
 };
 
 
 function changeUser() {
-
-
     $('.readonly').prop('readonly', false);
     document.getElementById("userName").focus();
     document.getElementById("btn_saveUser").style.display = 'block';
@@ -68,5 +63,66 @@ function changeUser() {
 
 function deleteUser() {
     console.log("functie deleteUser")
-   localStorage.clear();
+    localStorage.clear();
 }
+
+
+
+
+// functie voor opvragen serverID
+function account() {
+    console.log("fct_account");
+            
+    
+            var url = "https://s9p7k0aywk.execute-api.eu-central-1.amazonaws.com/latest/account";
+            var data = savedUser
+            //{ screenname: "paul" };
+    
+            fetch(url, {
+                method: 'POST', // or 'PUT'
+                body: JSON.stringify(data), // data can be `string` or {object}!
+                headers: {
+                    'Content-Type': 'application/json',
+                    'x-api-key': 'sN3Fq24IrI92zfXBxCBxt1EN6IYHJpI0acqQhoQt',
+                }
+            })
+                .then(res => res.json())
+                //.then(response => console.log('Success:', JSON.stringify(response)))
+                .then(response => window.localStorage.setItem("id", response))
+                .catch(error => console.error('Error:', error));
+          console.log("einde fct_account")     
+        };
+
+
+
+var grabUserInfor = undefined
+
+// functie met serverID gebruikersnaam opvragen.
+function getName() {
+
+    console.log("getName");
+
+    var id = window.localStorage.getItem("id");
+
+
+    var url = "https://s9p7k0aywk.execute-api.eu-central-1.amazonaws.com/latest/account/" + id;
+    console.log(url);
+
+
+    fetch(url, {
+        method: 'GET', // or 'PUT'
+
+        headers: {
+            'Content-Type': 'application/json',
+            'x-api-key': 'sN3Fq24IrI92zfXBxCBxt1EN6IYHJpI0acqQhoQt',
+        }
+    })
+        .then(res => res.json())
+        .then(response => console.log('Success:', JSON.stringify(response)))
+        
+        .catch(error => console.error('Error:', error));
+
+
+
+
+};// end function getName
